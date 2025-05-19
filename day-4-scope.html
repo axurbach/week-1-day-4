@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4- Scope + Simple Logic Practice</title>
+</head>
+<body>
+
+    <p>
+        <style>
+            p {
+                display: none;
+            }
+        </style>
+
+        GOALS:
+        Understand scope (where variables exist)
+
+        Practice using functions, conditionals, and user input
+
+        Build a mini calculator with simple logic
+
+        What is Scope?
+        Scope determines where your variable can be used.
+
+    </p>
+
+    <script id="notes">
+        // --global scope--
+
+        // variables defined outside of a function can be used anywhere in the code
+
+        // example:
+
+        let globalVariable = "This variable is global!";
+
+        function showMessage() {
+            // the variable is now accessible in this function
+            console.log(globalVariable);
+        }
+
+        // --function scope--
+
+        // variables defined inside of a function can only be used inside of said function
+
+        // example
+
+        function functionScopeExample() {
+            let localVariable = "This variable is local!";
+
+            // this one will work
+            console.log(localVariable)
+        }
+        
+        // ERROR: not defined outside (There is no definition for the variable that can be obtained outside of the closed function above)
+        console.log(localVariable)
+
+        // --block scope--
+
+        // variables inside of {} with let or const are scoped to that block
+
+        // example:
+
+        if (true) {
+            let numberFive = 5
+        }
+
+        // ERROR: not defined outside
+        console.log(numberFive)
+    </script>
+
+    <script id="assignment">
+        // --assignment: build a mini calculator--
+
+        // You’ll create a function that:
+
+        // Asks the user for 2 numbers
+
+        // Asks them to choose an operator (+, -, *, /)
+
+        // Performs the calculation
+
+        // Displays the result
+
+        function calculator() {
+            
+                let firstNumber = parseFloat(prompt("first number HERE"));
+                let operator = prompt("choose an OPERATOR like + - * /");
+                let secondNumber = parseFloat(prompt("second number HERE"));
+
+                // --input validation--
+                // || means "or"
+                // isNaN checks if it is Not a number
+                if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                    alert("yo this is a SIMPLE calculator can you pleaseeeeeeeeeee use NUMBERS not LETTERS or WORDS");
+
+                    // return ends the function
+                    return;
+                }
+
+                let calculating = prompt("lemme calculate rq bru give me like 3 sec maybe less");
+
+                // --operators--
+                
+                 if (operator === "+") {
+                    alert("YOUR ANSWER IS " + (firstNumber + secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                } 
+                
+                else if (operator === "-") {
+                    alert("YOUR ANSWER IS " + (firstNumber - secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                } 
+                
+                else if (operator === "*") {
+                    alert("YOUR ANSWER IS " + (firstNumber * secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                } 
+                
+                else if (operator === "/") {
+                    alert("YOUR ANSWER IS " + (firstNumber / secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                }
+                
+                else {
+                    alert("use the OPERATORS I showed you idk what typa math that is");
+                }
+
+        }
+
+        calculator();
+    </script>
+    
+</body>
+</html>
