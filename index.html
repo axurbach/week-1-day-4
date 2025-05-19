@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script id="assignment">
+        // --day 4 assignment: build a mini calculator--
+
+        // You’ll create a function that:
+
+        // Asks the user for 2 numbers
+
+        // Asks them to choose an operator (+, -, *, /)
+
+        // Performs the calculation
+
+        // Displays the result
+
+        function calculator() {
+            
+                let firstNumber = parseFloat(prompt("first number HERE"));
+                let operator = prompt("choose an OPERATOR like + - * /");
+                let secondNumber = parseFloat(prompt("second number HERE"));
+
+                // --input validation--
+                // || means "or"
+                // isNaN checks if it is Not a number
+                if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                    alert("yo this is a SIMPLE calculator can you pleaseeeeeeeeeee use NUMBERS not LETTERS or WORDS");
+
+                    // return ends the function
+                    return;
+                }
+
+                let calculating = prompt("lemme calculate rq bru give me like 3 sec maybe less");
+
+                // --operators--
+                
+                 if (operator === "+") {
+                    alert("YOUR ANSWER IS " + (firstNumber + secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                } 
+                
+                else if (operator === "-") {
+                    alert("YOUR ANSWER IS " + (firstNumber - secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                } 
+                
+                else if (operator === "*") {
+                    alert("YOUR ANSWER IS " + (firstNumber * secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                } 
+                
+                else if (operator === "/") {
+                    alert("YOUR ANSWER IS " + (firstNumber / secondNumber) + " NOW REFRESH THE PAGE SO TS WORKS AGAIN");
+                }
+                
+                else {
+                    alert("use the OPERATORS I showed you idk what typa math that is");
+                }
+        }
+
+        calculator();
+        
+    </script>
+</body>
+</html>
